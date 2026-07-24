@@ -33,7 +33,7 @@ class Settings:
         # bullet
         self.bullet_file = Path.cwd()  /'Assets' / 'images' / 'laserBullet.png'
         self.bullet_sound = Path.cwd() /'Assets' / 'sound' / 'laserfire02.mp3'
-        self.impact_sound = Path.cwd() /'Assets' / 'sound' / 'impactSound.mp3'
+        self.impact_sound = Path.cwd() /'Assets' / 'sound' / 'impactSound2.mp3'
 
         
         self.bullet_w = 60
