@@ -56,6 +56,9 @@ class AlienInvasion:
         self.clock = pygame.time.Clock()
 
         pygame.mixer.init()
+        pygame.mixer.music.load(self.settings.background_music)
+        pygame.mixer.music.set_volume(self.settings.music_volume)
+        pygame.mixer.music.play(-1)
 
         self.laser_sound = pygame.mixer.Sound(self.settings.bullet_sound)
         self.laser_sound.set_volume(0.7)
