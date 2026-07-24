@@ -25,18 +25,19 @@ class Settings:
         self.difficulty_scale = 1.1
         self.scores_file = Path.cwd() /'Assets'/'file'/'scores.json'
 
-        self.ship_file = Path.cwd() /'Assets'/'images' /'ship2(no bg).png'
-        self.ship_w = 20
-        self.ship_h = 30
-        
+        # space ship
+        self.ship_file = Path.cwd() /'Assets'/'images' /'ship1.png'
+        self.ship_w = 85
+        self.ship_h = 115
 
-        self.bullet_file = Path.cwd()  /'Assets' / 'images' / 'laserBlast.png'
-        self.bullet_sound = Path.cwd() /'Assets' / 'sound' / 'laser.mp3'
+        # bullet
+        self.bullet_file = Path.cwd()  /'Assets' / 'images' / 'laserBullet.png'
+        self.bullet_sound = Path.cwd() /'Assets' / 'sound' / 'laserfire02.mp3'
         self.impact_sound = Path.cwd() /'Assets' / 'sound' / 'impactSound.mp3'
 
         
-        self.bullet_w = 250
-        self.bullet_h = 80
+        self.bullet_w = 60
+        self.bullet_h = 130
         
 
         self.alien_file = Path.cwd() /'Assets'/'images'/'enemy_4.png'
