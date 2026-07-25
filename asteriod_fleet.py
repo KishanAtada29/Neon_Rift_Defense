@@ -82,9 +82,9 @@ class AsteroidFleet:
     
     def _create_asteroid(self, current_x: int, current_y: int):
         """Create one alien and add it to the fleet."""
-        new_alien = Asteroid(self, current_x,current_y)
+        new_asteroid = Asteroid(self, current_x,current_y)
 
-        self.fleet.add(new_alien)
+        self.fleet.add(new_asteroid)
 
     def _check_fleet_edges(self):
         """Check if any alien reaches the screen edge."""
