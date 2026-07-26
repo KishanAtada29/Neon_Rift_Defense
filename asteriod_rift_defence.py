@@ -22,7 +22,7 @@ from settings import Settings
 from game_stats import GameStats
 from ship import Ship
 from arsenal import Arsenal
-#from alien import Alien
+
 from asteriod_fleet import AsteroidFleet
 from time import sleep
 from button import Button

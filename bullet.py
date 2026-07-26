@@ -14,13 +14,13 @@ from pygame.sprite import Sprite
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from alien_invasion import AlienInvasion
+    from asteriod_rift_defence import AsteroidRiftDefence
 
 
 class Bullet(Sprite):
     """Represent one bullet fired by the ship."""
 
-    def __init__(self, game: 'AlienInvasion'):
+    def __init__(self, game: 'AsteroidRiftDefence'):
         """Initialize a bullet at the ship's current position."""
         super().__init__()
         self.screen = game.screen

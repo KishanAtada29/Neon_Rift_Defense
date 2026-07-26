@@ -13,13 +13,13 @@ import pygame.font
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from alien_invasion import AlienInvasion
+    from asteriod_rift_defence import AsteroidRiftDefence
     from arsenal import Arsenal
 
 class Button:
     """Create and manage a clickable game button."""
 
-    def __init__(self, game: 'AlienInvasion', msg):
+    def __init__(self, game: 'AsteroidRiftDefence' , msg):
         """Initialize the button settings, position, font, and message."""
         self.game = game
         self.screen = game.screen
