@@ -1,13 +1,14 @@
 """
-Module Name: alien_fleet.py
+Module Name: asteroid_fleet.py
 Author: Kishan Atada
 Course: CSCI 1511
-Date: July 15, 2026
+Date: July 24, 2026
 
 Purpose:
-This module creates and manages the alien fleet. It handles fleet creation,
-alien spacing, side-to-side movement, dropping the fleet, collision checks,
-and checking if the fleet reaches the bottom of the screen.
+This module creates and manages the asteroid fleet. It handles asteroid
+creation, asteroid spacing, side-to-side movement, dropping the fleet,
+collision checks, and checking if the asteroid fleet reaches the bottom
+of the screen.
 """
 
 import pygame
@@ -31,7 +32,7 @@ class AsteroidFleet:
         self.create_fleet()
 
     def create_fleet(self):
-        """Create the alien fleet using screen size and alien size."""
+        """Create the astroid fleet using screen size and astroid size."""
         asteroid_w = self.settings.asteroid_w
         asteroid_h = self.settings.asteroid_h
         screen_w = self.settings.screen_w
@@ -43,7 +44,7 @@ class AsteroidFleet:
         self._create_rectangle_fleet(asteroid_w, asteroid_h, fleet_w, fleet_h, x_offset, y_offset)
 
     def _create_rectangle_fleet(self, asteroid_w, asteroid_h, fleet_w, fleet_h, x_offset, y_offset):
-        """Create aliens in rows and columns."""
+        """Create astroid in rows and columns."""
         for row in range(fleet_h):
             for col in range(fleet_w):
                 current_x = asteroid_w * col + x_offset
@@ -62,7 +63,7 @@ class AsteroidFleet:
         return x_offset,y_offset
 
     def calculate_fleet_size(self, asteroid_w, screen_w, alien_h, screen_h):
-        """Calculate how many aliens can fit on the screen."""
+        """Calculate how many asteroid can fit on the screen."""
         fleet_w = (screen_w//asteroid_w)
         fleet_h = ((screen_h/2)//alien_h)
 
@@ -81,13 +82,13 @@ class AsteroidFleet:
         return int(fleet_w) , int(fleet_h)
     
     def _create_asteroid(self, current_x: int, current_y: int):
-        """Create one alien and add it to the fleet."""
+        """Create one asteroid and add it to the fleet."""
         new_asteroid = Asteroid(self, current_x,current_y)
 
         self.fleet.add(new_asteroid)
 
     def _check_fleet_edges(self):
-        """Check if any alien reaches the screen edge."""
+        """Check if any asteroid reaches the screen edge."""
         Asteroid: 'Asteroid'
         for Asteroid in self.fleet:
             if Asteroid.check_edges():
@@ -96,7 +97,7 @@ class AsteroidFleet:
                 break
     
     def _drop_Asteroid_fleet(self):
-        """Move the alien fleet downward when it reaches an edge."""
+        """Move the asteroid fleet downward when it reaches an edge."""
         for Asteroid in self.fleet:
             print('here')
             Asteroid.y += self.fleet_drop_speed
@@ -109,17 +110,17 @@ class AsteroidFleet:
         self.fleet.update()
 
     def draw(self):
-        """Draw all aliens in the fleet."""
+        """Draw all asteroid in the fleet."""
         Asteroid: 'Asteroid'
         for Asteroid in self.fleet:
             Asteroid.draw_asteroid()
     
     def check_collisions(self,  other_group):
-        """Check collisions between aliens and another sprite group."""
+        """Check collisions between asteroid and another sprite group."""
         return pygame.sprite.groupcollide(self.fleet, other_group, True, True)
     
     def check_fleet_bottom(self):
-        """Return True if any alien reaches the bottom of the screen."""
+        """Return True if any asteroid reaches the bottom of the screen."""
         asteroid: Asteroid
         for asteroid in self.fleet:
             if asteroid.rect.bottom >= self.settings.screen_h:
@@ -127,7 +128,7 @@ class AsteroidFleet:
         return False
     
     def check_destroyed_status(self):
-        """Return True if all aliens have been destroyed."""
+        """Return True if all asteroid have been destroyed."""
         return not self.fleet
     
 

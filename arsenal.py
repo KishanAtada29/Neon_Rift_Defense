@@ -2,12 +2,12 @@
 Module Name: arsenal.py
 Author: Kishan Atada
 Course: CSCI 1511
-Date: July 15, 2026
+Date: July 24, 2026
 
 Purpose:
-This module manages all bullets fired by the ship. It updates bullets,
-removes bullets that leave the screen, draws bullets, and controls how
-many bullets can be fired at one time.
+This module manages the player's laser bullets for Asteroid Rift Defense.
+It updates bullets, removes bullets that leave the screen, draws bullets,
+and controls how many bullets can be fired at one time.
 """
 
 
@@ -16,12 +16,12 @@ from typing import TYPE_CHECKING
 from bullet import Bullet
 
 if TYPE_CHECKING:
-    from alien_invasion import AlienInvasion
+    from asteriod_rift_defence import AsteroidRiftDefence
 
 
 class Arsenal:
     """Manage the group of bullets fired by the ship."""
-    def __init__(self, game: 'AlienInvasion'):
+    def __init__(self, game: 'AsteroidRiftDefence'):
         """Initialize the bullet group and game settings."""
         self.game = game
         self.settings = game.settings

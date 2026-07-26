@@ -2,18 +2,15 @@
 Module Name: hud.py
 Author: Kishan Atada
 Course: CSCI 1511
-Date: July 15, 2026
+Date: July 24, 2026
 
 Purpose:
-This module creates the HUD class for the Alien Invasion game. It displays
+This module creates the HUD class for the Asteroid Rift Defense game. It displays
 the current score, max score, high score, level, and remaining ships on the screen.
 """
 
 import pygame.font
 
-#from typing import TYPE_CHECKING
-
-#from alien_invasion import AlienInvasion
 
 class HUD:
     """Display game information on the screen."""

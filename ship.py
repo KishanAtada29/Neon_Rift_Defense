@@ -2,23 +2,24 @@
 Module Name: ship.py
 Author: Kishan Atada
 Course: CSCI 1511
-Date: July 15, 2026
+Date: July 24, 2026
 
 Purpose:
-This module creates the Ship class. It handles the player's ship image,
-movement, firing bullets, drawing the ship, and checking collisions with aliens.
+This module creates the Ship class for the Asteroid Rift Defense game. It handles
+the player's custom ship image, movement, firing bullets, drawing the ship, and
+checking collisions with asteroids.
 """
 
 import pygame 
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from alien_invasion import AlienInvasion
+    from asteriod_rift_defence import AsteroidRiftDefence
     from arsenal import Arsenal
 class Ship:
     """Represent the player's ship."""
 
-    def __init__(self, game: 'AlienInvasion', arsenal: 'Arsenal'):
+    def __init__(self, game: 'AsteroidRiftDefence', arsenal: 'Arsenal'):
         """Initialize the ship, screen, movement flags, and arsenal."""
         self.game = game
         self.settings = game.settings

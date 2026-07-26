@@ -1,17 +1,18 @@
 """
-Program Name: Alien Invasion
+Program Name: Asteroid Rift Defense
 Author: Kishan Atada
 Course: CSCI 1511
-Date: July 15, 2026
+Date: July 24, 2026
 
 Purpose:
-This program creates an Alien Invasion game using pygame. The game includes
-a player ship, bullets, alien fleet movement, collision detection, sounds,
-and basic game status tracking.
+This program creates an Asteroid Rift Defense game using pygame. The game
+includes a custom player ship, custom laser bullets, asteroid movement,
+collision detection, sounds, scoring, lives, and basic game status tracking.
 
 Starter Code Information:
 This project was started from the instructor's Alien Invasion starter code
-and expanded during class tutorials.
+and customized for Track 2: Custom Assets. The original alien theme was changed
+to an asteroid defense theme.
 """
 
 
@@ -29,7 +30,7 @@ from button import Button
 from hud import HUD
 
 class AsteroidRiftDefence:
-    """Main class that controls the Alien Invasion game."""
+    """Main class that controls the  Asteroid Rift Defence game."""
 
     def __init__(self):
         """Initialize the game, settings, screen, sounds, and game objects."""
@@ -89,7 +90,7 @@ class AsteroidRiftDefence:
             self.clock.tick(self.settings.FPS)
 
     def _check_collisions(self):
-        """Check collisions between ship, aliens, bullets, and screen bottom."""
+        """Check collisions between ship, asteroids, bullets, and screen bottom."""
         # check collision for ship
         if self.ship.check_collision(self.astroid_fleet.fleet):
             self._check_game_status()
@@ -130,7 +131,7 @@ class AsteroidRiftDefence:
         
 
     def _reset_level(self):
-        """Clear bullets and aliens, then create a new alien fleet."""
+        """Clear bullets and asteroid, then create a new alien fleet."""
         self.ship.arsenal.arsenal.empty()
         self.astroid_fleet.fleet.empty()
         self.astroid_fleet.create_fleet()
@@ -146,7 +147,7 @@ class AsteroidRiftDefence:
         pygame.mouse.set_visible(False)
 
     def _update_screen(self):
-        """Draw the background, ship, aliens, bullets, and update the display."""
+        """Draw the background, ship, asteroids, bullets, and update the display."""
         self.screen.blit(self.bg, (0,0))
         self.ship.draw()
         self.astroid_fleet.draw()

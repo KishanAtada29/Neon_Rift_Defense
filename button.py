@@ -1,12 +1,13 @@
 """
-Module Name: button.py
+Module Name: bullet.py
 Author: Kishan Atada
 Course: CSCI 1511
-Date: July 15, 2026
+Date: July 24, 2026
 
 Purpose:
-This module creates the Button class for the Alien Invasion game. It handles
-the button's position, text, drawing, and checking if the player clicked it.
+This module creates the Bullet class for the Asteroid Rift Defense game.
+It handles the custom laser bullet image, starting position, upward movement,
+and drawing the bullet on the screen.
 """
 
 import pygame.font

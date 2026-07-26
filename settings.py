@@ -2,20 +2,20 @@
 Module Name: settings.py
 Author: Kishan Atada
 Course: CSCI 1511
-Date: July 15, 2026
+Date: July 24, 2026
 
 Purpose:
-This module stores all settings for the Alien Invasion game. It includes
+This module stores all settings for the Asteroid Rift Defense game. It includes
 screen size, image files, sound files, ship settings, bullet settings,
-alien settings, fleet movement, and starting ship count.
+asteroid settings, fleet movement, scoring, and starting ship count.
 """
 
 from pathlib import Path
 class Settings:
-    """Store all game settings for Alien Invasion."""
+    """Store all game settings for Asteroid Rift Defence."""
     def __init__(self):
-        """Initialize screen, ship, bullet, alien, and fleet settings."""
-        self.name: str = 'Alien Invasion'
+        """Initialize screen, ship, bullet, asteroid, and fleet settings."""
+        self.name: str = 'Asteroid RIft Defence'
         self.screen_w = 1200
         self.screen_h = 800
         self.FPS = 60
@@ -38,8 +38,8 @@ class Settings:
         
         self.bullet_w = 60
         self.bullet_h = 130
-        
 
+        # asteroids
         self.asteroid_file = Path.cwd() /'Assets'/'images'/'Asteroid Brown.png'
         self.asteroid_w = 40
         self.asteroid_h = 40
@@ -65,7 +65,7 @@ class Settings:
 
         self.fleet_speed = 2
         self.fleet_drop_speed = 40
-        self.alien_points = 50
+        self.asteroid_points = 50
     
     def increase_difficulty(self):
         """Increase game speed when the player reaches the next level."""

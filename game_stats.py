@@ -2,23 +2,24 @@
 Module Name: game_stats.py
 Author: Kishan Atada
 Course: CSCI 1511
-Date: July 15, 2026
+Date: July 24, 2026
 
 Purpose:
-This module stores game status information, such as how many ships
-the player has left during the game.
+This module stores game status information for Asteroid Rift Defense. It tracks
+the player's score, highest score, current level, and how many ships the player
+has left during the game.
 """
-#from pathlib import Path
+
 import json
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from alien_invasion import AlienInvasion
+    from asteriod_rift_defence import AsteroidRiftDefence
 
 class GameStats():
 
-    """Track game statistics for Alien Invasion."""
-    def __init__(self, game: 'AlienInvasion'):
+    """Track game statistics for Asteroid Rift Defence"""
+    def __init__(self, game: 'AsteroidRiftDefence'):
         """Initialize the number of ships the player has left."""
         self.game = game
         self.settings = game.settings
@@ -62,7 +63,6 @@ class GameStats():
         # update score
         self._update_score(collisions)
 
-    
         # update max_score
         self._update_max_score()
 
@@ -73,19 +73,17 @@ class GameStats():
         """Update max score when the current score is higher."""
         if self.score > self.max_score:
             self.max_score = self.score
-        #print(f'Max: {self.max_score}')
     
     def _update_hi_score(self):
         """Update high score when the current score is higher."""
         if self.score > self.hi_score:
             self.hi_score = self.score
-        #print(f'Hi: {self.hi_score}')
         
 
     def _update_score(self, collisions):
         """Add points for each alien destroyed."""
-        for alien in collisions.values():
-            self.score += self.settings.alien_points
+        for asteroid in collisions.values():
+            self.score += self.settings.asteroid_points
         #print(f'Basic: {self.score}')
         
 

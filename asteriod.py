@@ -1,12 +1,12 @@
 """
-Module Name: alien.py
+Module Name: asteroid.py
 Author: Kishan Atada
 Course: CSCI 1511
-Date: July 15, 2026
+Date: July 24, 2026
 
 Purpose:
-This module creates the Alien class for the Alien Invasion game.
-It handles one alien's image, position, movement, edge detection, and drawing.
+This module creates the Asteroid class for the Asteroid Rift Defense game.
+It handles one asteroid's image, position, movement, edge detection, and drawing.
 """
 
 import pygame 
@@ -14,15 +14,14 @@ from pygame.sprite import Sprite
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    #from alien_invasion import AlienInvasion
     from asteriod_fleet import AsteroidFleet
 
 
 class Asteroid(Sprite):
-    """Represent one alien in the alien fleet."""
+    """Represent one asteroid in the asteroid fleet."""
 
     def __init__(self, fleet: 'AsteroidFleet', x: float, y: float):
-        """Initialize an alien at the given x and y position."""
+        """Initialize an asteroid at the given x and y position."""
         super().__init__()
 
         self.fleet = fleet
@@ -43,21 +42,17 @@ class Asteroid(Sprite):
         self.x =  float(self.rect.x)
 
     def update(self):
-        """Move the alien left or right based on the fleet direction."""
+        """Move the asteroid left or right based on the fleet direction."""
         temp_speed = self.settings.fleet_speed
-
-        #if self.check_edges():
-        #    #self.settings.fleet_direction *= -1
-        #    self.y += self.settings.fleet_drop_speed
 
         self.x += temp_speed * self.fleet.fleet_direction
         self.rect.x = self.x
         self.rect.y = self.y
 
     def check_edges(self):
-        """Return True if the alien reaches the left or right screen edge."""
+        """Return True if the asteroid reaches the left or right screen edge."""
         return self.rect.right >= self.boundaries.right or self.rect.left <= self.boundaries.left
     
     def draw_asteroid(self):
-        """Draw the alien on the screen."""
+        """Draw the asteroid on the screen."""
         self.screen.blit(self.image, self.rect)
