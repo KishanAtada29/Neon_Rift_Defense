@@ -29,11 +29,13 @@ class HUD:
         self.update_level()
 
     def _setup_life_image(self):
-        """Load and scale the ship image used to show remaining lives."""
-        self.life_image = pygame.image.load(self.settings.ship_file)
-        self.life_image = pygame.transform.scale(self.life_image,(self.settings.ship_w, self.settings.ship_h))
+        """Load and scale the heart image used to show remaining lives."""
+        self.life_image = pygame.image.load(self.settings.life_file).convert_alpha()
+        self.life_image = pygame.transform.scale(
+        self.life_image,
+        (self.settings.life_w, self.settings.life_h)
+        )
         self.life_rect = self.life_image.get_rect()
-
     
     def update_scores(self):
         """Update all score-related HUD images."""

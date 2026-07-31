@@ -51,6 +51,11 @@ class Settings:
         self.button_h = 50
         self.button_color = (0,135,50)
 
+        # life icon
+        self.life_file = Path.cwd() / 'Assets' / 'images' / 'heart.png'
+        self.life_w = 35
+        self.life_h = 35
+
         self.text_color = (255,255,255)
         self.button_font_size = 48
         self.HUD_font_size =20
