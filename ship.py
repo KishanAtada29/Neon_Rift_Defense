@@ -26,7 +26,8 @@ class Ship:
         self.screen = game.screen
         self.boundaries = self.screen.get_rect()
 
-        self.image = pygame.image.load(self.settings.ship_file).convert_alpha()
+        #self.image = pygame.image.load(self.settings.ship_file).convert_alpha()
+        self.load_ship_image(self.settings.ship_files[0])
         self.image = pygame.transform.scale(self.image,
             (self.settings.ship_w, self.settings.ship_h)
         )
@@ -36,6 +37,15 @@ class Ship:
         self.moving_right = False
         self.moving_left = False
         self.arsenal = arsenal
+
+    def load_ship_image(self, image_file):
+        """Load and scale the ship image."""
+        self.image = pygame.image.load(image_file).convert_alpha()
+        self.image = pygame.transform.scale(
+        self.image,
+        (self.settings.ship_w, self.settings.ship_h)
+        )
+        self.rect = self.image.get_rect()
 
     def _center_ship(self):
         """Place the ship at the bottom center of the screen."""
@@ -47,6 +57,20 @@ class Ship:
         #updating the position of the ship
         self._update_ship_movement()
         self.arsenal.update_arsenal()
+
+
+    def update_ship_for_level(self):
+        """Change the ship image based on the current level."""
+        level_index = min(
+            self.game.game_stats.level - 1,
+            len(self.settings.ship_files) - 1
+        )
+
+        old_midbottom = self.rect.midbottom
+        self.load_ship_image(self.settings.ship_files[level_index])
+        self.rect.midbottom = old_midbottom
+        self.x = float(self.rect.x)
+    
 
     def _update_ship_movement(self):
         """Move the ship left or right within the screen boundaries."""

@@ -128,8 +128,20 @@ class AsteroidFleet:
         return False
     
     def check_destroyed_status(self):
-        """Return True if all asteroid have been destroyed."""
-        return not self.fleet
+        """Return True if all asteroids have been destroyed."""
+        if not self.fleet:
+            self.game.ship.arsenal.arsenal.empty()
+            self.create_fleet()
+            self.game.settings.increase_difficulty()
+
+            self.game.game_stats.level += 1
+            self.game.ship.update_ship_for_level()
+            self.game.HUD.update_level()
+
+            return True
+
+        return False
+            
     
 
 
