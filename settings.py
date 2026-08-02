@@ -26,7 +26,12 @@ class Settings:
         self.scores_file = Path.cwd() /'Assets'/'file'/'scores.json'
 
         # space ship
-        self.ship_file = Path.cwd() /'Assets'/'images' /'ship1.png'
+        # ship images for level progression
+        self.ship_files = [
+        Path.cwd() / 'Assets' / 'images' / 'ship1.png',
+        Path.cwd() / 'Assets' / 'images' / 'ship_level2.png',
+        ]
+        #self.ship_file = Path.cwd() /'Assets'/'images' /'ship1.png'
         self.ship_w = 85
         self.ship_h = 115
 
