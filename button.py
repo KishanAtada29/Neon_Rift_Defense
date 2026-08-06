@@ -39,8 +39,20 @@ class Button:
         self.msg_img_rect.center = self.rect.center
 
     def  draw(self):
-        """Draw the button and its text on the screen."""
-        self.screen.fill(self.settings.button_color, self.rect)
+        """Draw the button as a red parallelogram and draw its text."""
+        points = [
+            (self.rect.left + 30, self.rect.top),
+            (self.rect.right, self.rect.top),
+            (self.rect.right - 30, self.rect.bottom),
+            (self.rect.left, self.rect.bottom)
+        ]
+
+        # red parallelogram
+        pygame.draw.polygon(self.screen, self.settings.button_color, points)
+
+        # white border
+        pygame.draw.polygon(self.screen, (0, 0, 0), points, 1)
+
         self.screen.blit(self.msg_img, self.msg_img_rect)
 
     def check_clicked(self, mouse_pos):

@@ -50,21 +50,23 @@ class Settings:
         self.asteroid_h = 40
         
         self.fleet_direction = 1
-        
 
+        # play button
         self.button_w = 200
         self.button_h = 50
-        self.button_color = (0,135,50)
+        self.button_color = (180,20,50)
 
         # life icon
         self.life_file = Path.cwd() / 'Assets' / 'images' / 'heart.png'
         self.life_w = 35
         self.life_h = 35
 
+        # text
         self.text_color = (255,255,255)
-        self.button_font_size = 48
+        self.button_font_size = 34
+
         self.HUD_font_size =20
-        self.font_file = Path.cwd() /'Assets'/'Fonts'/'Silkscreen'/'Silkscreen-Bold.ttf'
+        self.font_file = Path.cwd() /'Assets'/'Fonts'/'Silkscreen'/'Orbitron-VariableFont_wght.ttf'
 
     def initialize_dynamic_settings(self):
         """Set values that can reset or change during the game."""
