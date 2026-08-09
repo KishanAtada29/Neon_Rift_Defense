@@ -124,7 +124,7 @@ class AsteroidRiftDefence:
             self._reset_level()
             sleep(0.5)
         else:
-            self.gmae_active = False
+            self.game_active = False
 
         
 
