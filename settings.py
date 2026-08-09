@@ -75,8 +75,8 @@ class Settings:
         self.bullet_speed = 7
         self.bullet_amount = 5
 
-        self.fleet_speed = 2
-        self.fleet_drop_speed = 40
+        self.fleet_speed = 1
+        self.fleet_drop_speed = 35
         self.asteroid_points = 50
     
     def increase_difficulty(self):
